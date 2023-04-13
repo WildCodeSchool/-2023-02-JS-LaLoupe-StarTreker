@@ -1,12 +1,10 @@
-import Home from "./pages/Home";
-
 import "./App.css";
+import BurgerMenu from "@components/BurgerMenu";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <BurgerMenu />
     </div>
   );
 }
