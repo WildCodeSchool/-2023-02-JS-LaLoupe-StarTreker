@@ -1,13 +1,12 @@
-import Home from "./pages/Home";
-
-import "./App.css";
+import "./App.scss";
+import "./components/componentsCss/Background.scss";
+import bgimg from "./assets/Map-Milky-Way.png";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <main>
+      <img src={bgimg} alt="Milky Way" />
+    </main>
   );
 }
 
