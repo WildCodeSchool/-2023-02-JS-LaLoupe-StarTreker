@@ -11,3 +11,12 @@
   --color-secondary: #ffe500;
   --text-font: "Orbitron";
 }
+
+main {
+  position: relative;
+  z-index: 1;
+  img {
+    position: relative;
+    z-index: 1;
+  }
+}
