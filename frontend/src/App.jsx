@@ -1,7 +1,8 @@
 import "./App.scss";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Planets from "./pages/Planets";
 import "./components/componentsCss/Background.scss";
 import bgimg from "./assets/Map-Milky-Way.png";
 
@@ -12,9 +13,9 @@ function App() {
         <Header />
         <div>
           <Routes>
-            <Route path="/Actu" element={<Header />} />
-            <Route path="/Planet" element={<Header />} />
-            <Route path="/Support" element={<Header />} />
+            <Route path="/actu" element={<Header />} />
+            <Route path="/planetes" element={<Planets />} />
+            <Route path="/support" element={<Header />} />
           </Routes>
         </div>
       </Router>
