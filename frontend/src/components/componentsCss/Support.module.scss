@@ -1,0 +1,86 @@
+form {
+    background-color: black;
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-secondary);
+}
+
+label {
+    font-family: var(--text-font);
+}
+
+input {
+    width: 20em;
+    height: 2em;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 70%;
+    font-family: "Orbitron", "sans-serif";
+    font-weight: bold;
+    animation: pulsate 1s ease-in-out infinite both;
+    backdrop-filter: blur(1.4px);
+    clip-path: polygon(
+      15% 0%,
+      85% 0%,
+      100% 30%,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0% 70%,
+      0% 30%
+    );
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+textarea {
+    width: 20em;
+    height: 10em;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    width: 70%;
+    font-family: "Orbitron", "sans-serif";
+    font-weight: bold;
+    animation: pulsate 1s ease-in-out infinite both;
+    backdrop-filter: blur(1.4px);
+    clip-path: polygon(
+      15% 0%,
+      85% 0%,
+      100% 30%,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0% 70%,
+      0% 30%
+    );
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+button {
+    padding: 0.3rem;
+    width: 30%;
+    font-family: "Orbitron", "sans-serif";
+    font-weight: bold;
+    animation: pulsate 1s ease-in-out infinite both;
+    backdrop-filter: blur(1.4px);
+    clip-path: polygon(
+      15% 0%,
+      85% 0%,
+      100% 30%,
+      100% 70%,
+      85% 100%,
+      15% 100%,
+      0% 70%,
+      0% 30%
+    );
+    &:hover {
+      background-color: #ffe600cb;
+      cursor: pointer;
+    }
+}
