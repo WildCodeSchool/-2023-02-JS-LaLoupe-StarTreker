@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./componentsCss/burgermenu.scss";
 
 const BurgerMenu = () => {
@@ -37,13 +38,13 @@ const BurgerMenu = () => {
       <div className={menuClass}>
         <ul>
           <li>
-            <a href="actualites">ACTUALITÉS</a>
+            <Link to="/Actu">ACTUALITÉS</Link>
           </li>
           <li>
-            <a href="planetes">PLANÈTES</a>
+            <Link to="/Planet">PLANÈTES</Link>
           </li>
           <li>
-            <a href="support">SUPPORT</a>
+            <Link to="/Support">SUPPORT</Link>
           </li>
         </ul>
       </div>
