@@ -4,7 +4,7 @@ import style from "./componentsCss/Search.module.scss";
 function Search() {
   return (
     <div className={style.searchBar}>
-      <input type="text" name="searchBar" placeholder="Rechercher" />
+      <input type="text" name="searchBar" placeholder="🔎 Rechercher" />
     </div>
   );
 }
