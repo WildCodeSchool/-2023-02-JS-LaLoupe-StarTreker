@@ -2,7 +2,8 @@ import style from "@components/componentsCss/Support.module.scss";
 
 function Support() {
   return (
-    <div className={style.coucou}>
+    <div className={style.container}>
+      <h2>Support</h2>
       <form name="support">
         <label htmlFor="nom">Nom</label>
         <input type="text" name="nom" />
@@ -16,7 +17,7 @@ function Support() {
         <label htmlFor="message">Message</label>
         <textarea name="message" />
 
-        <button>Submit</button>
+        <button type="button">Submit</button>
       </form>
     </div>
   );

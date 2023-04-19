@@ -1,20 +1,23 @@
-form {
+.container {
+    text-align: center;
     background-color: black;
-    height: calc(100vh - 90px);
+    color: var(--color-secondary);
+    font-family: var(--text-font);
+
+h2 {
+    padding-top: 2rem;
+}
+
+form {
+    height: calc(100vh - 90px - 62.5px - 50px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--color-secondary);
-}
-
-label {
-    font-family: var(--text-font);
 }
 
 input {
-    width: 20em;
-    height: 2em;
+    height: 2rem;
     margin-bottom: 2rem;
     padding: 1rem;
     width: 70%;
@@ -38,8 +41,7 @@ input {
 }
 
 textarea {
-    width: 20em;
-    height: 10em;
+    height: 8rem;
     margin-bottom: 2rem;
     padding: 2rem;
     width: 70%;
@@ -83,4 +85,22 @@ button {
       background-color: #ffe600cb;
       cursor: pointer;
     }
+    }
+
+    @media screen and (min-width: 768px){
+        form {
+        height: calc(100vh - 90px - 62.5px - 50px)
+    }
+    
+        input {
+            width: 40%;
+            height: 2em;
+        }
+    
+        textarea {
+            width: 40%;
+            height: 2em;
+        }
+    }
 }
+
