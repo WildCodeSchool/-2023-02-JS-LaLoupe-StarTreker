@@ -4,6 +4,7 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import "./components/componentsCss/Background.scss";
 import bgimg from "./assets/Map-Milky-Way.png";
+import SearchBar from "./components/Search";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       </Router>
       <main>
         <img src={bgimg} alt="Milky Way" />
+        <SearchBar />
       </main>
       <Footer />
     </div>
