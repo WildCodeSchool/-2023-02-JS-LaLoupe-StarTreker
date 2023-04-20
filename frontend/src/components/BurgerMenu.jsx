@@ -38,13 +38,19 @@ const BurgerMenu = () => {
       <div className={menuClass}>
         <ul>
           <li>
-            <Link to="/Actu">ACTUALITÉS</Link>
+            <Link onClick={updateMenu} onKeyDown={updateMenu} to="/actualites">
+              ACTUALITÉS
+            </Link>
           </li>
           <li>
-            <Link to="/Planet">PLANÈTES</Link>
+            <Link onClick={updateMenu} onKeyDown={updateMenu} to="/planetes">
+              PLANÈTES
+            </Link>
           </li>
           <li>
-            <Link to="/Support">SUPPORT</Link>
+            <Link onClick={updateMenu} onKeyDown={updateMenu} to="/support">
+              SUPPORT
+            </Link>
           </li>
         </ul>
       </div>

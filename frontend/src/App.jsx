@@ -1,29 +1,27 @@
 import "./App.scss";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Gps from "./pages/Gps";
+import Header from "./components/Header";
+import Planets from "./pages/Planets";
+import Support from "./pages/Support";
+import Footer from "./components/Footer";
 import "./components/componentsCss/Background.scss";
-import PlanetButton from "@components/PlanetButton";
-import bgimg from "./assets/Map-Milky-Way.png";
 
 function App() {
   return (
     <div>
       <Router>
         <Header />
-        <PlanetButton />
+
         <div>
           <Routes>
-            <Route path="/Actu" element={<Header />} />
-            <Route path="/Planet" element={<Header />} />
-            <Route path="/Support" element={<Header />} />
-            <Route path="/Planets" element={<PlanetButton />} />
+            <Route path="/" element={<Gps />} />
+            <Route path="/actu" element={<Header />} />
+            <Route path="/planetes" element={<Planets />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </div>
       </Router>
-      <main>
-        <img src={bgimg} alt="Milky Way" />
-      </main>
       <Footer />
     </div>
   );

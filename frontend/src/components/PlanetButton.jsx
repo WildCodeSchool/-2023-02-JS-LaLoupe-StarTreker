@@ -5,7 +5,7 @@ import planetimg from "../assets/Planet_Button.png";
 function PlanetButton() {
   return (
     <div className={style.button}>
-      <Link to="/Planets">
+      <Link to="/planetes">
         <img src={planetimg} alt="" />
       </Link>
     </div>
