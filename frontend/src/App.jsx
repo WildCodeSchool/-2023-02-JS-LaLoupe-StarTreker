@@ -5,6 +5,7 @@ import Footer from "@components/Footer";
 import Support from "@pages/Support";
 import "./components/componentsCss/Background.scss";
 import Gps from "@pages/Gps";
+import SearchBar from "./components/Search";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <main>
+        <SearchBar />
+      </main>
       <Footer />
     </div>
   );
