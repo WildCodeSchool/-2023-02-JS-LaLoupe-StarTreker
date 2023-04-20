@@ -2,8 +2,9 @@ import "./App.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import Support from "@pages/Support";
 import "./components/componentsCss/Background.scss";
-import bgimg from "./assets/Map-Milky-Way.png";
+import Gps from "@pages/Gps";
 import SearchBar from "./components/Search";
 
 function App() {
@@ -13,14 +14,14 @@ function App() {
         <Header />
         <div>
           <Routes>
+            <Route path="/" element={<Gps />} />
             <Route path="/Actu" element={<Header />} />
             <Route path="/Planet" element={<Header />} />
-            <Route path="/Support" element={<Header />} />
+            <Route path="/Support" element={<Support />} />
           </Routes>
         </div>
       </Router>
       <main>
-        <img src={bgimg} alt="Milky Way" />
         <SearchBar />
       </main>
       <Footer />

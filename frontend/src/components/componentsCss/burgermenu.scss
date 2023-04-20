@@ -161,6 +161,10 @@ nav {
 .visible {
   transform: translateX(0%) scale(100%);
   transition: all 0.8s ease-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 /* ---------- Animation ---------- */
