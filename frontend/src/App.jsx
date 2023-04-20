@@ -4,7 +4,6 @@ import Gps from "./pages/Gps";
 import Header from "./components/Header";
 import Planets from "./pages/Planets";
 import Support from "./pages/Support";
-import SearchBar from "./components/Search";
 import Footer from "./components/Footer";
 import "./components/componentsCss/Background.scss";
 
@@ -22,9 +21,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <main>
-        <SearchBar />
-      </main>
       <Footer />
     </div>
   );
