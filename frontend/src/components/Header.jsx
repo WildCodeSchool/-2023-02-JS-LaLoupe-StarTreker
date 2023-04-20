@@ -1,8 +1,8 @@
 import style from "@components/componentsCss/Header.module.scss";
 import BurgerMenu from "@components/BurgerMenu";
+import { Link } from "react-router-dom";
 import PanelImg from "../assets/Panel_BG.jpg";
 import Logo from "../assets/ST_Logo.png";
-import { Link } from "react-router-dom";
 
 function Header() {
   return (
