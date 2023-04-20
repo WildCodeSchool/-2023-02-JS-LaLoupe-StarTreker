@@ -1,10 +1,12 @@
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Gps from "./pages/Gps";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Planets from "./pages/Planets";
+import Support from "./pages/Support";
+import SearchBar from "./components/Search";
+import Footer from "./components/Footer";
 import "./components/componentsCss/Background.scss";
-import bgimg from "./assets/Map-Milky-Way.png";
 
 function App() {
   return (
@@ -13,14 +15,15 @@ function App() {
         <Header />
         <div>
           <Routes>
+            <Route path="/" element={<Gps />} />
             <Route path="/actu" element={<Header />} />
             <Route path="/planetes" element={<Planets />} />
-            <Route path="/support" element={<Header />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </div>
       </Router>
       <main>
-        <img src={bgimg} alt="Milky Way" />
+        <SearchBar />
       </main>
       <Footer />
     </div>

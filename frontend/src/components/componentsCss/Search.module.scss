@@ -1,0 +1,13 @@
+.searchBar {
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  // height: 30px;
+  input {
+    font-size: 1.2rem;
+  }
+}
