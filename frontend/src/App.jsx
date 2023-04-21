@@ -23,6 +23,7 @@ function App() {
             <Footer />
           </div>
         </div>
+        <Footer />
       </Router>
     </div>
   );
