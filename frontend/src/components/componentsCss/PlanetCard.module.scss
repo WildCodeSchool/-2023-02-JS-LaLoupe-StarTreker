@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+.card {
+  $card-padding: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(150px, 100%, 375px);
+  height: clamp(150px, 100%, 400px);
+  z-index: 3;
+  margin: 8px;
+
+  .panel1 {
+    width: 100%;
+    min-height: 250px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      clip-path: polygon(
+        20% 0,
+        80% 0,
+        100% 20%,
+        100% 80%,
+        80% 100%,
+        20% 100%,
+        0 80%,
+        0 20%
+      );
+      filter: blur(2px);
+      background: rgba(122, 251, 255, 0.332);
+    }
+
+    .image {
+      position: absolute;
+      width: calc(100% - $card-padding);
+      height: calc(100% - $card-padding);
+      top: calc($card-padding / 2);
+      left: calc($card-padding / 2);
+      clip-path: polygon(
+        20% 0,
+        80% 0,
+        100% 20%,
+        100% 80%,
+        80% 100%,
+        20% 100%,
+        0 80%,
+        0 20%
+      );
+      object-fit: cover;
+    }
+    // }
+  }
+
+  .title {
+    position: relative;
+    bottom: 5px;
+    padding: 10px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(75 131 157 / 0%) 1px,
+        hsl(234deg 77% 14%) 5px,
+        rgb(21 53 68 / 0%) 4px,
+        transparent 0.5%
+      ),
+      repeating-linear-gradient(
+        to left,
+        hsl(295, 60%, 12%) 100%,
+        hsla(295, 61%, 12%, 0.216) 100%
+      );
+    clip-path: polygon(
+      20% 0,
+      80% 0,
+      100% 20%,
+      100% 80%,
+      80% 100%,
+      20% 100%,
+      0 80%,
+      0 20%
+    );
+    animation: backglitch 100ms linear infinite;
+    z-index: 10;
+
+    .titlePlanet1 {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      font-family: "Orbitron", "sans-serif";
+      text-shadow: 2px 2px 0px black;
+      animation: pulsate 2s ease-in-out infinite both;
+      z-index: 10;
+    }
+  }
+}
+
+.infoPlanet {
+  $card-padding: 50px;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    clip-path: polygon(
+      10% 0,
+      0 10%,
+      0 100%,
+      100% 100%,
+      100% 10%,
+      90% 0,
+      70% 0,
+      65% 10%,
+      35% 10%,
+      30% 0
+    );
+    filter: blur(2px);
+    background: rgba(122, 251, 255, 0.332);
+  }
+
+  .imgPlanet {
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+  }
+}
+
+@keyframes backglitch {
+  0% {
+    box-shadow: inset 0px 20px 20px 30px #2125519e;
+  }
+
+  50% {
+    box-shadow: inset 0px -20px 20px 30px hsl(235deg 53% 24% / 70%);
+  }
+
+  100% {
+    box-shadow: inset 0px 20px 20px 30px #2125519e;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    color: #ffe600a3;
+  }
+
+  50% {
+    color: #ffe600cb;
+  }
+
+  100% {
+    color: #ffe600a3;
+  }
+}

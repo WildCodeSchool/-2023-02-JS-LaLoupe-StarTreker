@@ -40,9 +40,6 @@ nav {
   z-index: 5;
   padding: 0 1rem;
   ul {
-    // min-width: 360px;
-    // max-width: 414px;
-    // height: 300px;
     position: relative;
     padding: calc($ul-padding * 2);
 
@@ -50,13 +47,9 @@ nav {
       content: "";
       position: absolute;
       width: 100%;
-      // min-width: 360px;
-      // max-width: 414px;
       height: 100%;
       top: 0;
       left: 0;
-      // left: -4px;
-      // top: 200px;
       filter: blur(40px);
       clip-path: polygon(
         26% 0,
@@ -80,9 +73,6 @@ nav {
       height: calc(100% - $ul-padding);
       top: calc($ul-padding / 2);
       left: calc($ul-padding / 2);
-      // min-width: 360px;
-      // max-width: 414px;
-      // height: 98%;
       box-shadow: inset 0px 0px 20px 20px #212121;
       background: repeating-linear-gradient(
           to bottom,
@@ -115,19 +105,11 @@ nav {
 
     li {
       position: relative;
-      // top: 230px;
-      // left: -3px;
-      // margin-top: 30px;
-      // display: flex;
-      // justify-items: center;
-      // align-items: center;
-      // padding-inline: 1em;
       list-style: none;
       z-index: 4;
       margin: 1rem;
 
       a {
-        // height: 40px;
         display: inline-block;
         text-align: center;
         padding: 1rem;
