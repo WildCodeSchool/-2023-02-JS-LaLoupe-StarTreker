@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import style from "./componentsCss/Footer.module.scss";
 import PanelImg from "../assets/Panel_BG.jpg";
-import { Link } from "react-router-dom";
 
 function Footer() {
   return (
