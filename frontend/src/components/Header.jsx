@@ -9,7 +9,9 @@ function Header() {
     <header className={style.header}>
       <div className={style.panel1} />
       <div className={style.panel2} />
-      <img className={style.logo} src={Logo} alt="Logo" />
+      <Link className={style.blop} to="/">
+        <img className={style.logo} src={Logo} alt="Logo" />
+      </Link>
       <Link className={style.blop} to="/">
         <h1 className={style.title}>
           Star <br />
