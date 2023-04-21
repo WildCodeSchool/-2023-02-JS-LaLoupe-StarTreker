@@ -11,15 +11,17 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
-
-        <div>
-          <Routes>
-            <Route path="/" element={<Gps />} />
-            <Route path="/actu" element={<Header />} />
-            <Route path="/planetes" element={<Planets />} />
-            <Route path="/support" element={<Support />} />
-          </Routes>
+        <div className="general">
+          <Header />
+          <div>
+            <Routes>
+              <Route path="/" element={<Gps />} />
+              <Route path="/actu" element={<Header />} />
+              <Route path="/planetes" element={<Planets />} />
+              <Route path="/support" element={<Support />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
         <Footer />
       </Router>
