@@ -20,7 +20,6 @@ function App() {
               <Route path="/planetes" element={<Planets />} />
               <Route path="/support" element={<Support />} />
             </Routes>
-            <Footer />
           </div>
         </div>
         <Footer />

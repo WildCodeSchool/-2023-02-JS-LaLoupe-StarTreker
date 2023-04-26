@@ -16,10 +16,9 @@ footer {
     // position: sticky;
     // bottom: 0;
 
-  .supp {
-  text-decoration: none;
-  }
-
+    .supp {
+      text-decoration: none;
+    }
 
     .panel1 {
       position: absolute;
@@ -47,12 +46,14 @@ footer {
       color: white;
       z-index: 5;
     }
-    button {
+    a {
       position: relative;
       height: 100%;
       padding: 0 7px;
       border: none;
       cursor: pointer;
+      display: flex;
+      align-items: center;
       background-color: #d9d9d900;
       color: white;
       transition: 0.3s;

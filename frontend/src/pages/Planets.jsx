@@ -7,6 +7,7 @@ const planets = [
   <PlanetCard />,
   <PlanetCard />,
   <PlanetCard />,
+  <PlanetCard />,
 ];
 
 function Planets() {
