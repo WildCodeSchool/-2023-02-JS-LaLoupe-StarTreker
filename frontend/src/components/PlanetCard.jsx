@@ -1,18 +1,48 @@
+import { useState } from "react";
 import style from "./componentsCss/PlanetCard.module.scss";
 import tempimg from "../assets/Terrestrial-Habitable-Earth.png";
 
 function PlanetCard() {
+  const [card, setCard] = useState("unclicked");
+  const [infoPlanet, setInfoPlanet] = useState("hidden");
+  const [isArticleClicked, setIsArticleClicked] = useState(false);
+
+  const updateCard = (e) => {
+    if (e.code === "Enter" || e.code === undefined) {
+      if (!isArticleClicked) {
+        setCard("clicked");
+        setInfoPlanet("visible");
+      } else {
+        setCard("unclicked");
+        setInfoPlanet("hidden");
+      }
+      setIsArticleClicked(!isArticleClicked);
+    }
+  };
+
   return (
     <>
-      <figure className={style.card}>
+      <div
+        className={`${style.card} ${style[card]}`}
+        onClick={updateCard}
+        onKeyDown={updateCard}
+        role="button"
+        tabIndex="0"
+      >
         <div className={style.panel1}>
           <img className={style.image} src={tempimg} alt="Planet" />
         </div>
         <figcaption className={style.title}>
           <h2 className={style.titlePlanet1}>Earth</h2>
         </figcaption>
-      </figure>
-      <article className={style.infoPlanet}>
+      </div>
+      <div
+        className={`${style.infoPlanet} ${style[infoPlanet]}`}
+        onClick={updateCard}
+        onKeyDown={updateCard}
+        role="button"
+        tabIndex="0"
+      >
         <img className={style.imgPlanet} src={tempimg} alt="Planet" />
         <figcaption className={style.desc}>
           <h2 className={style.titlePlanet2}>Earth</h2>
@@ -25,11 +55,13 @@ function PlanetCard() {
           </p>
           <ul className={style.characteristicList}>
             <li className={style.characteristic}>Terrestrial</li>
+            <div className={style.bar} />
             <li className={style.characteristic}>Habitable</li>
+            <div className={style.bar} />
             <li className={style.characteristic}>Civilization</li>
           </ul>
         </figcaption>
-      </article>
+      </div>
     </>
   );
 }

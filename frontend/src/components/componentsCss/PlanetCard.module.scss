@@ -7,10 +7,11 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin: 8px;
   width: clamp(150px, 100%, 375px);
   height: clamp(150px, 100%, 400px);
+  cursor: pointer;
   z-index: 3;
-  margin: 8px;
 
   .panel1 {
     width: 100%;
@@ -55,7 +56,6 @@
       );
       object-fit: cover;
     }
-    // }
   }
 
   .title {
@@ -100,24 +100,33 @@
   }
 }
 
+.clicked {
+  transform: translateX(2000px) scale(0%);
+  transition: all 1.5s ease-out;
+}
+.unclicked {
+  transform: translateX(0%) scale(100%);
+  transition: all 0.8s ease-out;
+}
+
 .infoPlanet {
-  $card-padding: 50px;
   position: absolute;
-  display: none;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 0 10px;
   width: 100%;
   height: 100%;
-  top: 0;
-  z-index: 1000;
+  top: 100px;
+  cursor: pointer;
+  z-index: 6;
 
   &::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
     left: 0;
     clip-path: polygon(
       10% 0,
@@ -131,11 +140,16 @@
       35% 10%,
       30% 0
     );
-    filter: blur(2px);
-    background: rgba(122, 251, 255, 0.332);
+    backdrop-filter: blur(8px);
+    background: rgba(55, 114, 117, 0.582);
   }
 
   .imgPlanet {
+    position: relative;
+    padding: 0 10px;
+    object-fit: cover;
+    width: clamp(300px, 100%, 1140px);
+    height: clamp(300px, 100%, 375px);
     clip-path: polygon(
       30% 0%,
       70% 0%,
@@ -147,6 +161,103 @@
       0% 30%
     );
   }
+
+  .desc {
+    position: relative;
+    top: 10px;
+    padding: 0 10px;
+    max-width: 768px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(75 131 157 / 0%) 1px,
+        hsl(234deg 77% 14%) 5px,
+        rgb(21 53 68 / 0%) 4px,
+        transparent 0.5%
+      ),
+      repeating-linear-gradient(
+        to left,
+        hsl(295, 60%, 12%) 100%,
+        hsla(295, 61%, 12%, 0.216) 100%
+      );
+    animation: backglitch 80ms linear infinite;
+    clip-path: polygon(
+      10% 0%,
+      90% 0%,
+      100% 10%,
+      100% 90%,
+      90% 100%,
+      10% 100%,
+      0% 90%,
+      0% 10%
+    );
+    z-index: 7;
+
+    .titlePlanet2 {
+      margin: 10px 0;
+      animation: pulsate 2s ease-in-out infinite both;
+      text-decoration: underline;
+    }
+    .information {
+      margin-bottom: 20px;
+    }
+
+    .characteristicList {
+      border: solid 1px;
+      list-style: none;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      animation: pulsateC 2s ease-in-out infinite both;
+
+      .characteristic {
+        font-weight: 800;
+      }
+
+      .bar {
+        width: 80%;
+        height: 1px;
+        margin: 5px auto;
+        border-radius: 25px;
+        animation: pulsateB 2s ease-in-out infinite both;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .imgPlanet {
+      height: clamp(300px, 100%, 500px);
+      margin-top: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .imgPlanet {
+      height: clamp(300px, 100%, 525px);
+      margin-top: 60px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .imgPlanet {
+      height: clamp(300px, 100%, 540px);
+      margin-top: 80px;
+    }
+  }
+  @media screen and (min-width: 1500px) {
+    .imgPlanet {
+      height: clamp(300px, 100%, 625px);
+      margin-top: 120px;
+    }
+  }
+}
+
+.visible {
+  transform: translateX(0%) scale(100%);
+  transition: all 0.8s ease-out;
+}
+.hidden {
+  transform: translateY(1000px) scale(0%);
+  transition: all 1.5s ease-out;
 }
 
 @keyframes backglitch {
@@ -174,5 +285,33 @@
 
   100% {
     color: #ffe600a3;
+  }
+}
+
+@keyframes pulsateC {
+  0% {
+    border-color: #00ffff99;
+  }
+
+  50% {
+    border-color: #00ffff;
+  }
+
+  100% {
+    border-color: #00ffff99;
+  }
+}
+
+@keyframes pulsateB {
+  0% {
+    background-color: #00ffff99;
+  }
+
+  50% {
+    background-color: #00ffff;
+  }
+
+  100% {
+    background-color: #00ffff99;
   }
 }

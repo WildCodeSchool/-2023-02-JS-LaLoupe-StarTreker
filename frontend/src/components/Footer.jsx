@@ -9,7 +9,7 @@ function Footer() {
       <p className={style.footer}>©℗®™ Star Treker 2023</p>
 
       <Link className={style.supp} to="/support">
-        <p>support</p>
+        support
       </Link>
 
       <img className={style.panelimg} src={PanelImg} alt="Stars Background" />

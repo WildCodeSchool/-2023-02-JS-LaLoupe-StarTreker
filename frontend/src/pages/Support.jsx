@@ -1,8 +1,10 @@
 import style from "@components/componentsCss/Support.module.scss";
+import nebula from "@assets/nebula.png";
 
 function Support() {
   return (
     <div className={style.container}>
+      <img src={nebula} alt="Nebula" />
       <h2>Support</h2>
       <form name="support">
         <label htmlFor="nom">Nom</label>
