@@ -87,7 +87,7 @@ PlanetCard.propTypes = {
   koi_period: PropTypes.number.isRequired,
   koi_prad: PropTypes.number.isRequired,
   koi_teq: PropTypes.number.isRequired,
-  steff: PropTypes.number.isRequired,
+  koi_steff: PropTypes.number.isRequired,
   koi_srad: PropTypes.number.isRequired,
 };
 
