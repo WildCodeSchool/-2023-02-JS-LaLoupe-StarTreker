@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import style from "./componentsCss/PlanetCard.module.scss";
 import tempimg from "../assets/Terrestrial-Habitable-Earth.png";
 
@@ -79,5 +80,15 @@ function PlanetCard({ planet }) {
     </>
   );
 }
+
+PlanetCard.propTypes = {
+  planet: PropTypes.string.isRequired,
+  kepoi_name: PropTypes.string.isRequired,
+  koi_period: PropTypes.number.isRequired,
+  koi_prad: PropTypes.number.isRequired,
+  koi_teq: PropTypes.number.isRequired,
+  steff: PropTypes.number.isRequired,
+  koi_srad: PropTypes.number.isRequired,
+};
 
 export default PlanetCard;

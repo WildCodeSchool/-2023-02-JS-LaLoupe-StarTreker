@@ -23,10 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Images planètes (temporaire)
-/home/alicia/WCS/projet-2-StarTreker/frontend/src/assets/Aquatic/*
-/home/alicia/WCS/projet-2-StarTreker/frontend/src/assets/Arrid/*
-/home/alicia/WCS/projet-2-StarTreker/frontend/src/assets/Earth-Like/*
-/home/alicia/WCS/projet-2-StarTreker/frontend/src/assets/Gas-Giant/*
-/home/alicia/WCS/projet-2-StarTreker/frontend/src/assets/Hot-Arrid/*
