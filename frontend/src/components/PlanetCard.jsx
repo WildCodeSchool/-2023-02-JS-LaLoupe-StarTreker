@@ -68,7 +68,7 @@ function PlanetCard({ planet }) {
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
-              Température de son étoile : {planet.steff} Kelvin
+              Température de son étoile : {planet.koi_steff} Kelvin
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
