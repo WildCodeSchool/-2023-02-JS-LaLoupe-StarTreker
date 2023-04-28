@@ -35,6 +35,7 @@ function Gps() {
 
     const newMarkers = [];
 
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 80; i++) {
       const marker = L.marker([
         getRandomNumber(-45, 45),
@@ -61,6 +62,7 @@ function Gps() {
         <ImageOverlay url={url} bounds={bounds} />
 
         {markers.map((marker, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Marker key={index} position={marker.getLatLng()} icon={myIcon} />
         ))}
       </MapContainer>
