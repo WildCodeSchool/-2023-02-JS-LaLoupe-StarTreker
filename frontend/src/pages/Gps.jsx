@@ -1,4 +1,4 @@
-import PlanetButton from "@components/PlanetButton";
+import PlanetButton from "../components/PlanetButton";
 import bgimg from "../assets/Map-Milky-Way.png";
 import Search from "../components/Search";
 

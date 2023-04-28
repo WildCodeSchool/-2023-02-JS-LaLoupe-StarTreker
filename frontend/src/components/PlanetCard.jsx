@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./componentsCss/PlanetCard.module.scss";
 import tempimg from "../assets/Terrestrial-Habitable-Earth.png";
 
-function PlanetCard() {
+function PlanetCard({ planet }) {
   const [card, setCard] = useState("unclicked");
   const [infoPlanet, setInfoPlanet] = useState("hidden");
   const [isArticleClicked, setIsArticleClicked] = useState(false);
@@ -33,7 +33,7 @@ function PlanetCard() {
           <img className={style.image} src={tempimg} alt="Planet" />
         </div>
         <figcaption className={style.title}>
-          <h2 className={style.titlePlanet1}>Earth</h2>
+          <h2 className={style.titlePlanet1}>{planet.kepoi_name}</h2>
         </figcaption>
       </div>
       <div
@@ -45,7 +45,7 @@ function PlanetCard() {
       >
         <img className={style.imgPlanet} src={tempimg} alt="Planet" />
         <figcaption className={style.desc}>
-          <h2 className={style.titlePlanet2}>Earth</h2>
+          <h2 className={style.titlePlanet2}>{planet.kepoi_name}</h2>
           <p className={style.information}>
             Earth, the only known planet with liquid water and hospitable
             conditions for life. Rotates on its axis every 24 hours, while
@@ -54,11 +54,25 @@ function PlanetCard() {
             that make it habitable.
           </p>
           <ul className={style.characteristicList}>
-            <li className={style.characteristic}>Terrestrial</li>
+            <li className={style.characteristic}>
+              Orbite en {planet.koi_period.toFixed(2)} jours
+            </li>
             <div className={style.bar} />
-            <li className={style.characteristic}>Habitable</li>
+            <li className={style.characteristic}>
+              Diamètre : {planet.koi_prad} fois celui de la Terre
+            </li>
             <div className={style.bar} />
-            <li className={style.characteristic}>Civilization</li>
+            <li className={style.characteristic}>
+              Température moyenne : {planet.koi_teq} Kelvin
+            </li>
+            <div className={style.bar} />
+            <li className={style.characteristic}>
+              Température de son étoile : {planet.steff} Kelvin
+            </li>
+            <div className={style.bar} />
+            <li className={style.characteristic}>
+              Diamètre de son étoile : {planet.koi_srad} fois celui du Soleil
+            </li>
           </ul>
         </figcaption>
       </div>
