@@ -10,7 +10,6 @@
 }
 
 .planetsPage {
-  // background-color: var(--color-main);
   color: var(--color-secondary);
   text-align: center;
   font-family: var(--text-font);
@@ -24,11 +23,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // grid-template-columns: repeat(2, 1fr);
-    // gap: 1rem;
-    // grid-auto-rows: clamp(150px, 100%, 400px);
   }
 }
+
 @media screen and (min-width: 768px) {
   .bg {
     left: 0;
