@@ -68,7 +68,7 @@ function PlanetCard({ planet }) {
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
-              Température de son étoile : {planet.steff} Kelvin
+              Température de son étoile : {planet.koi_steff} Kelvin
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
@@ -87,7 +87,7 @@ PlanetCard.propTypes = {
   koi_period: PropTypes.number.isRequired,
   koi_prad: PropTypes.number.isRequired,
   koi_teq: PropTypes.number.isRequired,
-  steff: PropTypes.number.isRequired,
+  koi_steff: PropTypes.number.isRequired,
   koi_srad: PropTypes.number.isRequired,
 };
 
