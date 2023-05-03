@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Loading from "@components/Loading";
+import Loading from "../components/Loading";
 import PlanetCard from "../components/PlanetCard";
 import bgimgplanet from "../assets/planetNebula.png";
 import style from "../components/componentsCss/planetsPage.module.scss";
@@ -15,7 +15,8 @@ const getPlanet = () => {
         "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&where=koi_disposition%20like%20%27CANDIDATE%27%20and%20koi_period%3E150%20and%20koi_prad%3E0.2&format=json"
       )
       .then((response) => {
-        setPlanets(response.data.slice(0, 70));
+        const planetImages = response.data.slice(0, 70);
+        setPlanets(planetImages);
         setIsLoading(false);
       });
   }, []);
