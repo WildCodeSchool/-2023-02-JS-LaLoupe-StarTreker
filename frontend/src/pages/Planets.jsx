@@ -21,22 +21,21 @@ const getPlanet = () => {
   }, []);
 
   if (isLoading) {
-    <Loading />;
-  } else {
-    return (
-      <>
-        <img src={bgimgplanet} alt="Nebula with planet" className={style.bg} />
-        <div className={style.planetsPage}>
-          <h2>Planètes</h2>
-          <section>
-            {planets.map((planet) => (
-              <PlanetCard key={`planet-${planet.kepid}`} planet={planet} />
-            ))}
-          </section>
-        </div>
-      </>
-    );
+    return <Loading />;
   }
+  return (
+    <>
+      <img src={bgimgplanet} alt="Nebula with planet" className={style.bg} />
+      <div className={style.planetsPage}>
+        <h2>Planètes</h2>
+        <section>
+          {planets.map((planet) => (
+            <PlanetCard key={`planet-${planet.kepid}`} planet={planet} />
+          ))}
+        </section>
+      </div>
+    </>
+  );
 };
 
 export default getPlanet;
