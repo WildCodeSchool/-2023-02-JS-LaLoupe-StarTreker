@@ -23,7 +23,12 @@ const getPlanet = () => {
         "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&where=koi_disposition%20like%20%27CANDIDATE%27%20and%20koi_period%3E150%20and%20koi_prad%3E0.2&format=json"
       )
       .then((response) => {
-        setPlanets(response.data.slice(0, 70));
+        // const planetImages = response.data.slice(0, 10).map((planet) => {
+        //   const img = results.find((image) => image.id === planet.kepid)?.image;
+        //   return { ...planet, image: img };
+        // });
+        const planetImages = response.data.slice(0, 70);
+        setPlanets(planetImages);
       });
   }, []);
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import style from "./componentsCss/PlanetCard.module.scss";
-import tempimg from "../assets/Terrestrial-Habitable-Earth.png";
 
 function PlanetCard({ planet }) {
   const [card, setCard] = useState("unclicked");
@@ -13,6 +12,10 @@ function PlanetCard({ planet }) {
       if (!isArticleClicked) {
         setCard("clicked");
         setInfoPlanet("visible");
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       } else {
         setCard("unclicked");
         setInfoPlanet("hidden");
@@ -31,7 +34,11 @@ function PlanetCard({ planet }) {
         tabIndex="0"
       >
         <div className={style.panel1}>
-          <img className={style.image} src={tempimg} alt="Planet" />
+          <img
+            className={style.image}
+            src={`../src/assets/PlanetsImages/${planet.kepid}.png`}
+            alt="Planète"
+          />
         </div>
         <figcaption className={style.title}>
           <h2 className={style.titlePlanet1}>{planet.kepoi_name}</h2>
@@ -44,7 +51,11 @@ function PlanetCard({ planet }) {
         role="button"
         tabIndex="0"
       >
-        <img className={style.imgPlanet} src={tempimg} alt="Planet" />
+        <img
+          className={style.imgPlanet}
+          src={`../src/assets/PlanetsImages/${planet.kepid}.png`}
+          alt="Planet"
+        />
         <figcaption className={style.desc}>
           <h2 className={style.titlePlanet2}>{planet.kepoi_name}</h2>
           <p className={style.information}>
@@ -87,8 +98,8 @@ PlanetCard.propTypes = {
   koi_period: PropTypes.number.isRequired,
   koi_prad: PropTypes.number.isRequired,
   koi_teq: PropTypes.number.isRequired,
-  koi_steff: PropTypes.number.isRequired,
   koi_srad: PropTypes.number.isRequired,
+  koi_steff: PropTypes.number.isRequired,
 };
 
 export default PlanetCard;
