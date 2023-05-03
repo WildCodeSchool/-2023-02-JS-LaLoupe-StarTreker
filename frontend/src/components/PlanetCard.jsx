@@ -58,13 +58,7 @@ function PlanetCard({ planet }) {
         />
         <figcaption className={style.desc}>
           <h2 className={style.titlePlanet2}>{planet.kepoi_name}</h2>
-          <p className={style.information}>
-            Earth, the only known planet with liquid water and hospitable
-            conditions for life. Rotates on its axis every 24 hours, while
-            revolving around the sun every 365 days. The only place in the
-            universe where we have found life and a delicate balance of systems
-            that make it habitable.
-          </p>
+
           <ul className={style.characteristicList}>
             <li className={style.characteristic}>
               Orbite en {planet.koi_period.toFixed(2)} jours
@@ -79,11 +73,11 @@ function PlanetCard({ planet }) {
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
-              Température de son étoile : {planet.koi_steff} Kelvin
+              Diamètre de son étoile : {planet.koi_srad} fois celui du Soleil
             </li>
             <div className={style.bar} />
             <li className={style.characteristic}>
-              Diamètre de son étoile : {planet.koi_srad} fois celui du Soleil
+              Température de son étoile : {planet.koi_steff} Kelvin
             </li>
           </ul>
         </figcaption>
