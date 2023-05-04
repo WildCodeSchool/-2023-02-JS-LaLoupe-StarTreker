@@ -41,7 +41,9 @@ function PlanetCard({ planet }) {
           />
         </div>
         <figcaption className={style.title}>
-          <h2 className={style.titlePlanet1}>{planet.kepoi_name}</h2>
+          <h2 className={style.titlePlanet1}>
+            {planet.kepoi_name} - {planet.koi_teq}
+          </h2>
         </figcaption>
       </div>
       <div

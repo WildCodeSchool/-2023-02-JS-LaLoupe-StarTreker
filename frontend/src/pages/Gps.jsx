@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { MapContainer, ImageOverlay, Marker } from "react-leaflet";
 import L from "leaflet";
 import seedrandom from "seedrandom";
-import PlanetButton from "@components/PlanetButton";
-import icon from "@assets/Rotating_Planet.gif";
+import PlanetButton from "../components/PlanetButton";
+import icon from "../assets/Rotating_Planet.gif";
 import bgimg from "../assets/Map-Milky-Way.png";
 import Search from "../components/Search";
+// import GpsPopUp from "../components/GpsPopUp";
 
 const bounds = [
   [-90, -180],
@@ -61,9 +62,14 @@ function Gps() {
       >
         <ImageOverlay url={url} bounds={bounds} />
 
-        {markers.map((marker, index) => (
+        {markers.map((marker) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Marker key={index} position={marker.getLatLng()} icon={myIcon} />
+          <>
+            <Marker position={marker.getLatLng()} icon={myIcon} />
+            {/* <GpsPopUp trigger>
+              <h1>Coucou</h1>
+            </GpsPopUp> */}
+          </>
         ))}
       </MapContainer>
 
