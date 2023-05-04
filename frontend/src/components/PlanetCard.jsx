@@ -1,35 +1,36 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import style from "./componentsCss/PlanetCard.module.scss";
 
 function PlanetCard({ planet }) {
-  const [card, setCard] = useState("unclicked");
-  const [infoPlanet, setInfoPlanet] = useState("hidden");
-  const [isArticleClicked, setIsArticleClicked] = useState(false);
+  // const [card, setCard] = useState("unclicked");
+  // const [infoPlanet, setInfoPlanet] = useState("hidden");
+  // const [isArticleClicked, setIsArticleClicked] = useState(false);
 
-  const updateCard = (e) => {
-    if (e.code === "Enter" || e.code === undefined) {
-      if (!isArticleClicked) {
-        setCard("clicked");
-        setInfoPlanet("visible");
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      } else {
-        setCard("unclicked");
-        setInfoPlanet("hidden");
-      }
-      setIsArticleClicked(!isArticleClicked);
-    }
-  };
+  // const updateCard = (e) => {
+  //   if (e.code === "Enter" || e.code === undefined) {
+  //     if (!isArticleClicked) {
+  //       setCard("clicked");
+  //       setInfoPlanet("visible");
+  //       // window.scrollTo({
+  //       //   top: 0,
+  //       //   behavior: "smooth",
+  //       // });
+  //     } else {
+  //       setCard("unclicked");
+  //       setInfoPlanet("hidden");
+  //     }
+  //     setIsArticleClicked(!isArticleClicked);
+  //   }
+  // };
 
   return (
-    <>
+    <Link to={`/planetes/${planet.kepid}`}>
       <div
-        className={`${style.card} ${style[card]}`}
-        onClick={updateCard}
-        onKeyDown={updateCard}
+        className={`${style.card}`}
+        // onClick={updateCard}
+        // onKeyDown={updateCard}
         role="button"
         tabIndex="0"
       >
@@ -46,56 +47,14 @@ function PlanetCard({ planet }) {
           </h2>
         </figcaption>
       </div>
-      <div
-        className={`${style.infoPlanet} ${style[infoPlanet]}`}
-        onClick={updateCard}
-        onKeyDown={updateCard}
-        role="button"
-        tabIndex="0"
-      >
-        <img
-          className={style.imgPlanet}
-          src={`../src/assets/PlanetsImages/${planet.kepid}.png`}
-          alt="Planet"
-        />
-        <figcaption className={style.desc}>
-          <h2 className={style.titlePlanet2}>{planet.kepoi_name}</h2>
-
-          <ul className={style.characteristicList}>
-            <li className={style.characteristic}>
-              Orbite en {planet.koi_period.toFixed(2)} jours
-            </li>
-            <div className={style.bar} />
-            <li className={style.characteristic}>
-              Diamètre : {planet.koi_prad} fois celui de la Terre
-            </li>
-            <div className={style.bar} />
-            <li className={style.characteristic}>
-              Température moyenne : {planet.koi_teq} Kelvin
-            </li>
-            <div className={style.bar} />
-            <li className={style.characteristic}>
-              Diamètre de son étoile : {planet.koi_srad} fois celui du Soleil
-            </li>
-            <div className={style.bar} />
-            <li className={style.characteristic}>
-              Température de son étoile : {planet.koi_steff} Kelvin
-            </li>
-          </ul>
-        </figcaption>
-      </div>
-    </>
+    </Link>
   );
 }
 
 PlanetCard.propTypes = {
   planet: PropTypes.string.isRequired,
   kepoi_name: PropTypes.string.isRequired,
-  koi_period: PropTypes.number.isRequired,
-  koi_prad: PropTypes.number.isRequired,
   koi_teq: PropTypes.number.isRequired,
-  koi_srad: PropTypes.number.isRequired,
-  koi_steff: PropTypes.number.isRequired,
 };
 
 export default PlanetCard;

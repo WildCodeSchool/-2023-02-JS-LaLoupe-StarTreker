@@ -6,6 +6,7 @@ import Loading from "./components/Loading";
 import Gps from "./pages/Gps";
 import Header from "./components/Header";
 import Planets from "./pages/Planets";
+import Planet from "./components/Planet";
 import Support from "./pages/Support";
 import Footer from "./components/Footer";
 import "./components/componentsCss/Background.scss";
@@ -42,7 +43,7 @@ function App() {
               <Route path="/planetes" element={<Planets planets={planets} />} />
               <Route
                 path="/planetes/:id"
-                element={<Planets planets={planets} />}
+                element={<Planet planets={planets} />}
               />
               <Route path="/support" element={<Support />} />
             </Routes>
