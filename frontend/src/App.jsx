@@ -38,7 +38,7 @@ function App() {
           <Header />
           <div>
             <Routes>
-              <Route path="/" element={<Gps />} />
+              <Route path="/" element={<Gps planets={planets} />} />
               <Route path="/actu" element={<Header />} />
               <Route path="/planetes" element={<Planets planets={planets} />} />
               <Route
