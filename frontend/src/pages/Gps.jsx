@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MapContainer, ImageOverlay, Marker } from "react-leaflet";
+import PropTypes from "prop-types";
 import L from "leaflet";
 import seedrandom from "seedrandom";
 import PlanetButton from "../components/PlanetButton";
@@ -25,7 +26,7 @@ const myIcon = L.icon({
   popupAnchor: [-3, -76],
 });
 
-function Gps() {
+function Gps({ planets }) {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
@@ -74,9 +75,10 @@ function Gps() {
       </MapContainer>
 
       <PlanetButton />
-      <Search />
+      <Search planets={planets} />
     </main>
   );
 }
+Gps.propTypes = { planets: PropTypes.string.isRequired };
 
 export default Gps;
