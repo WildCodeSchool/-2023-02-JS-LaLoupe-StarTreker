@@ -9,6 +9,10 @@
   position: fixed;
 }
 
+a {
+  text-decoration: none;
+}
+
 .planetsPage {
   color: var(--color-secondary);
   text-align: center;
@@ -24,6 +28,20 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+.card {
+  $card-padding: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+  width: clamp(150px, 100%, 375px);
+  height: clamp(150px, 100%, 400px);
+  cursor: pointer;
+  z-index: 3;
 }
 
 @media screen and (min-width: 768px) {
