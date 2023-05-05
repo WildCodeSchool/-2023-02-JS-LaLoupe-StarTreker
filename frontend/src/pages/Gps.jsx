@@ -64,13 +64,7 @@ function Gps({ planets }) {
         <ImageOverlay url={url} bounds={bounds} />
 
         {markers.map((marker) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <>
-            <Marker position={marker.getLatLng()} icon={myIcon} />
-            {/* <GpsPopUp trigger>
-              <h1>Coucou</h1>
-            </GpsPopUp> */}
-          </>
+          <Marker position={marker.getLatLng()} icon={myIcon} />
         ))}
       </MapContainer>
 

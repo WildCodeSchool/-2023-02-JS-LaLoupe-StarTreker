@@ -1,5 +1,4 @@
-import { useParams } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import bgimgplanet from "../assets/planetNebula.png";
 import style from "./componentsCss/Planet.module.scss";
@@ -9,14 +8,12 @@ function Planet({ planets }) {
   const planet = planets.find((item) => item.kepid === id);
 
   return (
-    <>
+    <Link to="/planetes">
       <img src={bgimgplanet} alt="Nebula with planet" className={style.bg} />
       <div className={style.planetsPage}>
         <h2>Planètes</h2>
         <section
           className={`${style.infoPlanet} ${style.visible}`}
-          // onClick={updateCard}
-          // onKeyDown={updateCard}
           role="button"
           tabIndex="0"
         >
@@ -52,7 +49,7 @@ function Planet({ planets }) {
           </figcaption>
         </section>
       </div>
-    </>
+    </Link>
   );
 }
 
