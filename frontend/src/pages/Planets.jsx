@@ -1,11 +1,9 @@
-// import { useParams } from "react";
+import PropTypes from "prop-types";
 import PlanetCard from "../components/PlanetCard";
 import bgimgplanet from "../assets/planetNebula.png";
 import style from "../components/componentsCss/planetsPage.module.scss";
 
-const getPlanet = ({ planets }) => {
-  // const id = parseInt(useParams().id, 10);
-  // const planetWithId = planets.find((item) => item.kepid === id);
+const Planets = ({ planets }) => {
   return (
     <>
       <img src={bgimgplanet} alt="Nebula with planet" className={style.bg} />
@@ -21,4 +19,8 @@ const getPlanet = ({ planets }) => {
   );
 };
 
-export default getPlanet;
+Planets.propTypes = {
+  planets: PropTypes.string.isRequired,
+};
+
+export default Planets;
