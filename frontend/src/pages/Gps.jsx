@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MapContainer, ImageOverlay, Marker } from "react-leaflet";
 import PropTypes from "prop-types";
 import L from "leaflet";
+import ActuSlide from "@components/ActuSlide";
 import seedrandom from "seedrandom";
 import PlanetButton from "../components/PlanetButton";
 import icon from "../assets/Rotating_Planet.gif";
@@ -69,6 +70,7 @@ function Gps({ planets }) {
 
       <PlanetButton />
       <Search planets={planets} />
+      <ActuSlide />
     </main>
   );
 }
