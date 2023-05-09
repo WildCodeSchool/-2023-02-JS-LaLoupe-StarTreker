@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-main: rgba(30, 63, 177);
+  --color-secondary: rgb(255, 229, 0);
+  --text-font: "Orbitron";
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  #map {
+    height: 100%;
+  }
+}

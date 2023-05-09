@@ -1,0 +1,132 @@
+header {
+  $panel-padding: 10px;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  .panel1 {
+    position: absolute;
+    width: calc(100% - $panel-padding);
+    height: calc(100% - $panel-padding);
+    top: calc($panel-padding / 2);
+    left: calc($panel-padding / 2);
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      75% 100%,
+      65% 87%,
+      35% 87%,
+      25% 100%,
+      0 100%
+    );
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgb(75 131 157 / 0%) 1px,
+      hsl(234deg 77% 14%) 5px,
+      rgb(21 53 68 / 0%) 4px,
+      transparent 0.5%
+    );
+    animation: backglitch 5000ms linear infinite;
+    z-index: 1;
+  }
+
+  .panel2 {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(40px);
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      75% 100%,
+      65% 87%,
+      35% 87%,
+      25% 100%,
+      0 100%
+    );
+    background: rgba(122, 251, 255, 0.5568627451);
+    transition: all 1s ease-in-out;
+    z-index: 0;
+  }
+
+  > div {
+    align-self: flex-start;
+  }
+  img {
+    position: relative;
+    width: 85px;
+    height: 85px;
+    top: -2px;
+    left: 2px;
+    transform: rotate(22.76deg);
+    opacity: 70%;
+    z-index: 3;
+  }
+  
+  .blop {
+    text-decoration: none;
+  }
+
+  h1 {
+    position: relative;
+    animation: pulsate 2s ease-in-out infinite both;
+    text-shadow: 2px 2px 0px black;
+    font-family: "StarDate";
+    z-index: 5;
+  }
+
+  .panelimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    transform: none;
+    opacity: 100%;
+    z-index: -1;
+  }
+}
+
+@font-face {
+  font-family: "StarDate";
+  src: url("../../assets/OrbitronBlack-n6dV.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes backglitch {
+  0% {
+    box-shadow: inset 0px 20px 20px 30px #2125519e;
+  }
+
+  50% {
+    box-shadow: inset 0px -20px 20px 30px hsl(235deg 53% 24% / 70%);
+  }
+
+  100% {
+    box-shadow: inset 0px 20px 20px 30px #2125519e;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    color: #ffe600a3;
+  }
+
+  50% {
+    color: #ffe600cb;
+  }
+
+  100% {
+    color: #ffe600a3;
+  }
+}
+

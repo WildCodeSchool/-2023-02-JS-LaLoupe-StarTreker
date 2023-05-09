@@ -1,0 +1,12 @@
+@media screen and (min-width: 768px) {
+  .button {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    cursor: pointer;
+    margin-top: 30px;
+    left: 50px;
+    top: 0;
+  }
+}
